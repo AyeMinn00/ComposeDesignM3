@@ -104,10 +104,10 @@ fun ReplyTheme(
 ) {
     val context = LocalContext.current
     val colors = when {
-        (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) -> {
-            if (useDarkTheme) dynamicDarkColorScheme(context)
-            else dynamicLightColorScheme(context)
-        }
+//        (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) -> {
+//            if (useDarkTheme) dynamicDarkColorScheme(context)
+//            else dynamicLightColorScheme(context)
+//        }
 
         useDarkTheme -> DarkColorScheme
         else -> LightColorScheme
@@ -115,7 +115,7 @@ fun ReplyTheme(
 
     // Add primary status bar color from chosen color scheme.
     val view = LocalView.current
-    if(!view.isInEditMode){
+    if (!view.isInEditMode) {
         SideEffect {
             val window = (view.context as Activity).window
             window.statusBarColor = colors.primary.toArgb()
@@ -127,6 +127,7 @@ fun ReplyTheme(
 
     MaterialTheme(
         colorScheme = colors,
-        content = content
+        content = content,
+        typography = typography
     )
 }
