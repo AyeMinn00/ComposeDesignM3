@@ -27,6 +27,7 @@ import androidx.compose.material.icons.outlined.ChatBubbleOutline
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
+import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -34,9 +35,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
 import com.example.reply.R
+import com.example.reply.utils.DevicePosture
 
 @Composable
 fun ReplyApp(
+    windowSize: WindowWidthSizeClass,
+    foldingDevicePosture : DevicePosture,
     replyHomeUIState: ReplyHomeUIState,
     closeDetailScreen: () -> Unit = {},
     navigateToDetail: (Long) -> Unit = {}
