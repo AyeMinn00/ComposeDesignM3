@@ -91,12 +91,6 @@ class MainActivity : ComponentActivity() {
                         windowSize = windowSize.widthSizeClass,
                         foldingDevicePosture = devicePostureFlow.collectAsState().value,
                         replyHomeUIState = uiState,
-                        closeDetailScreen = {
-                            viewModel.closeDetailScreen()
-                        },
-                        navigateToDetail = { emailId ->
-                            viewModel.setSelectedEmail(emailId)
-                        }
                     )
                 }
             }
